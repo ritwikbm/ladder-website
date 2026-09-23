@@ -58,13 +58,13 @@ export default function Home() {
         <div className="container-page pt-12 pb-16 md:pt-24 md:pb-28">
           <div className="grid md:grid-cols-2 gap-12 md:gap-16 items-center">
 
-            {/* ============= LEFT: Copy ============= */}
-            <div className="text-center md:text-left">
-              <div className="inline-flex items-center gap-2 rounded-full border border-linec bg-white/80 backdrop-blur-sm px-3.5 py-1.5 text-[12.5px] font-semibold text-ink/70 mb-6 md:mb-7">
+            {/* LEFT: Copy */}
+            <div>
+              <div className="inline-flex items-center gap-2 rounded-full border border-linec bg-white/80 backdrop-blur-sm px-3.5 py-1.5 text-[12.5px] font-semibold text-ink/70 mb-7">
                 🇧🇩 <span>Made in Bangladesh</span>
               </div>
 
-              <h1 className="text-[44px] md:text-[60px] leading-[1.04] font-extrabold tracking-tight text-ink mb-5 md:mb-6">
+              <h1 className="text-[42px] md:text-[60px] leading-[1.04] font-extrabold tracking-tight text-ink mb-6">
                 Every task
                 <br />
                 tells a{' '}
@@ -73,42 +73,29 @@ export default function Home() {
                 </span>
               </h1>
 
-              <p className="text-[16px] md:text-[18.5px] leading-relaxed text-ink/70 mb-7 md:mb-8 max-w-lg mx-auto md:mx-0">
+              <p className="text-[16.5px] md:text-[18.5px] leading-relaxed text-ink/70 mb-8 max-w-lg">
                 Today, someone needs a hospital serial held. Tomorrow, someone needs medicine picked up. Ladder is where those small tasks find nearby hands — and where every completed task becomes a rung someone can climb.
               </p>
 
-              {/* CTAs — mobile: 1 button + text link, desktop: 2 buttons */}
-              <div className="flex flex-col md:flex-row md:items-center gap-4 md:gap-3 mb-6">
+              <div className="flex flex-wrap items-center gap-3 mb-6">
                 <a
                   href={APP_URL}
-                  className="inline-flex items-center justify-center gap-2 rounded-xl bg-brand text-white px-7 py-4 md:py-3.5 font-semibold text-[15.5px] md:text-[15px] shadow-lg shadow-brand/25 hover:bg-amber-500 transition active:scale-[0.98] w-full md:w-auto"
+                  className="inline-flex items-center gap-2 rounded-xl bg-brand text-white px-6 py-3.5 font-semibold text-[15px] shadow-lg shadow-brand/25 hover:bg-amber-500 transition active:scale-[0.98]"
                 >
                   Open Ladder
                   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round">
                     <path d="M5 12h14M13 5l7 7-7 7" />
                   </svg>
                 </a>
-
                 <Link
                   to="/how-it-works"
-                  className="hidden md:inline-flex items-center gap-2 rounded-xl bg-white text-ink border border-linec px-6 py-3.5 font-semibold text-[15px] hover:border-terra transition active:scale-[0.98]"
+                  className="inline-flex items-center gap-2 rounded-xl bg-white text-ink border border-linec px-6 py-3.5 font-semibold text-[15px] hover:border-terra transition active:scale-[0.98]"
                 >
                   How it works
                 </Link>
-
-                <Link
-                  to="/how-it-works"
-                  className="md:hidden inline-flex items-center justify-center gap-1.5 text-[14.5px] font-semibold text-terra hover:text-amber-600 transition"
-                >
-                  See how it works
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round">
-                    <path d="M5 12h14M13 5l7 7-7 7" />
-                  </svg>
-                </Link>
               </div>
 
-              {/* Trust line */}
-              <div className="flex flex-wrap items-center justify-center md:justify-start gap-x-5 gap-y-2 text-[13px] text-ink/55">
+              <div className="flex flex-wrap items-center gap-x-5 gap-y-2 text-[13px] text-ink/55">
                 <span className="inline-flex items-center gap-1.5">
                   <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#16a34a" strokeWidth="3" strokeLinecap="round">
                     <polyline points="20 6 9 17 4 12" />
@@ -124,8 +111,8 @@ export default function Home() {
               </div>
             </div>
 
-            {/* ============= RIGHT: Task cards (hidden on small mobile) ============= */}
-            <div className="hidden md:block relative">
+            {/* RIGHT: Task cards */}
+            <div className="relative">
               <div className="relative z-10">
                 <TaskCard
                   icon="ticket"
@@ -162,22 +149,6 @@ export default function Home() {
                 />
               </div>
             </div>
-          </div>
-
-          {/* Mobile: Single hero task card preview */}
-          <div className="mt-12 md:hidden">
-            <div className="text-[11px] font-bold uppercase tracking-[0.18em] text-terra/70 mb-4 text-center">
-              Live tasks near you
-            </div>
-            <TaskCard
-              icon="ticket"
-              category="Queue & Serial"
-              title="Hold my serial at Popular Diagnostic"
-              price="250"
-              location="Mirpur 10"
-              time="Today · 5:30 PM"
-              applicants={3}
-            />
           </div>
         </div>
       </section>
@@ -283,7 +254,6 @@ export default function Home() {
         <div className="container-page py-24 md:py-32">
           <div className="grid md:grid-cols-12 gap-12 md:gap-16 items-center">
 
-            {/* LEFT: Big editorial portrait */}
             <div className="md:col-span-5 relative">
               <div className="absolute inset-0 -m-4 rounded-3xl bg-gradient-to-br from-amber-100 to-orange-100 opacity-40 blur-2xl" />
 
@@ -320,7 +290,6 @@ export default function Home() {
               </div>
             </div>
 
-            {/* RIGHT: Editorial quote + story */}
             <div className="md:col-span-7">
               <div className="text-[12px] font-bold uppercase tracking-[0.18em] text-terra mb-6">
                 A story from Dhaka
