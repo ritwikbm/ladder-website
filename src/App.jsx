@@ -7,6 +7,7 @@ import ForHirers from './pages/ForHirers'
 import ForWorkers from './pages/ForWorkers'
 import Safety from './pages/Safety'
 import FAQ from './pages/FAQ'
+import Contact from './pages/Contact'
 
 export default function App() {
   return (
@@ -19,6 +20,7 @@ export default function App() {
         <Route path="/for-workers" element={<ForWorkers />} />
         <Route path="/safety" element={<Safety />} />
         <Route path="/faq" element={<FAQ />} />
+        <Route path="/contact" element={<Contact />} />
       </Route>
     </Routes>
   )

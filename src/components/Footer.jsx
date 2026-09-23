@@ -38,7 +38,7 @@ export default function Footer() {
             <ul className="space-y-2.5">
           <li><Link to="/about" className="text-[14px] text-ink/70 hover:text-terra">About</Link></li>
               <li><Link to="/faq" className="text-[14px] text-ink/70 hover:text-terra">FAQ</Link></li>
-              <li><Link to="/contact" className="text-[14px] text-ink/70 hover:text-terra">Contact</Link></li>
+             <li><Link to="/contact" className="text-[14px] text-ink/70 hover:text-terra">Contact</Link></li>
             </ul>
           </div>
         </div>
