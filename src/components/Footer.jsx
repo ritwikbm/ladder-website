@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import Logo from './Logo'
+import { whatsappURL, CONTACT_EMAIL } from '../lib/config'
 
 export default function Footer() {
   return (
@@ -36,9 +37,19 @@ export default function Footer() {
               Company
             </h4>
             <ul className="space-y-2.5">
-          <li><Link to="/about" className="text-[14px] text-ink/70 hover:text-terra">About</Link></li>
+              <li><Link to="/about" className="text-[14px] text-ink/70 hover:text-terra">About</Link></li>
               <li><Link to="/faq" className="text-[14px] text-ink/70 hover:text-terra">FAQ</Link></li>
-             <li><Link to="/contact" className="text-[14px] text-ink/70 hover:text-terra">Contact</Link></li>
+              <li><Link to="/contact" className="text-[14px] text-ink/70 hover:text-terra">Contact</Link></li>
+              <li>
+                <a
+                  href={whatsappURL("Hi Ladder team,")}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-[14px] text-ink/70 hover:text-terra"
+                >
+                  Report a concern
+                </a>
+              </li>
             </ul>
           </div>
         </div>
@@ -49,8 +60,9 @@ export default function Footer() {
             © {new Date().getFullYear()} Ladder. All rights reserved.
           </p>
           <div className="flex items-center gap-5">
-            <Link to="/terms" className="text-[12.5px] text-ink/50 hover:text-terra">Terms</Link>
-            <Link to="/privacy" className="text-[12.5px] text-ink/50 hover:text-terra">Privacy</Link>
+            <Link to="/terms" className="text-[12.5px] text-ink/50 hover:text-terra">Terms of Service</Link>
+            <Link to="/privacy" className="text-[12.5px] text-ink/50 hover:text-terra">Privacy Policy</Link>
+            <a href={`mailto:${CONTACT_EMAIL}`} className="text-[12.5px] text-ink/50 hover:text-terra">Email</a>
           </div>
         </div>
       </div>

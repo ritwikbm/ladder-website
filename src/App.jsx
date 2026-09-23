@@ -8,6 +8,8 @@ import ForWorkers from './pages/ForWorkers'
 import Safety from './pages/Safety'
 import FAQ from './pages/FAQ'
 import Contact from './pages/Contact'
+import Terms from './pages/Terms'
+import Privacy from './pages/Privacy'
 
 export default function App() {
   return (
@@ -21,6 +23,8 @@ export default function App() {
         <Route path="/safety" element={<Safety />} />
         <Route path="/faq" element={<FAQ />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="/terms" element={<Terms />} />
+        <Route path="/privacy" element={<Privacy />} />
       </Route>
     </Routes>
   )
