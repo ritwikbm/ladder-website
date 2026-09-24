@@ -58,7 +58,6 @@ export default function Home() {
         <div className="container-page pt-10 pb-16 md:pt-16 md:pb-28">
           <div className="grid md:grid-cols-2 gap-12 md:gap-16 items-center">
 
-            {/* ============= LEFT: Copy ============= */}
             <div className="text-center md:text-left">
               <div className="inline-flex items-center gap-2 rounded-full border border-linec bg-white/80 backdrop-blur-sm px-3.5 py-1.5 text-[12.5px] font-semibold text-ink/70 mb-6 md:mb-7">
                 🇧🇩 <span>Made in Bangladesh</span>
@@ -77,7 +76,6 @@ export default function Home() {
                 Post a small task and get help from trusted people nearby. Or use your free time to earn, close to home.
               </p>
 
-              {/* CTAs — mobile: 1 button + text link, desktop: 2 buttons */}
               <div className="flex flex-col md:flex-row md:items-center gap-4 md:gap-3 mb-6">
                 <a
                   href={APP_URL}
@@ -107,7 +105,6 @@ export default function Home() {
                 </Link>
               </div>
 
-              {/* Trust line */}
               <div className="flex flex-wrap items-center justify-center md:justify-start gap-x-5 gap-y-2 text-[13px] text-ink/55">
                 <span className="inline-flex items-center gap-1.5">
                   <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#16a34a" strokeWidth="3" strokeLinecap="round">
@@ -124,95 +121,15 @@ export default function Home() {
               </div>
             </div>
 
-            {/* ============= RIGHT: Single animated example card ============= */}
+            {/* ============= RIGHT: Rickshaw-art illustration ============= */}
             <div className="relative flex justify-center md:justify-end">
-              <div className="w-full max-w-[380px]">
-                {/* Small "Example" label */}
-                <div className="mb-3 inline-flex items-center gap-2 text-[10.5px] font-bold uppercase tracking-[0.18em] text-terra/60">
-                  <span className="w-6 h-px bg-terra/30" />
-                  Example
-                </div>
-
-                {/* Animated card container */}
-                <div className="relative rounded-2xl border border-linec bg-white overflow-hidden shadow-lg shadow-black/5 hero-card">
-                  {/* Ambient top gradient line */}
-                  <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-brand to-terra" />
-
-                  <div className="p-6">
-                    {/* ---- STATE 1: Help needed ---- */}
-                    <div className="hero-state hero-state-1">
-                      <div className="flex items-start justify-between mb-3">
-                        <span className="inline-flex items-center gap-1.5 bg-amber-50 text-amber-700 text-[10.5px] font-bold px-2.5 py-1 rounded-full uppercase tracking-wider">
-                          Queue & Serial
-                        </span>
-                      </div>
-
-                      <div className="flex items-start gap-3 mb-4">
-                        <div className="w-11 h-11 rounded-xl bg-gradient-to-br from-amber-50 to-orange-50 flex items-center justify-center shrink-0">
-                          <Icon name="ticket" className="text-terra" />
-                        </div>
-                        <h3 className="text-[16px] font-bold text-ink leading-snug pt-1.5">
-                          Hold my serial at the hospital
-                        </h3>
-                      </div>
-
-                      <div className="flex items-center gap-2.5 text-[12.5px] text-ink/55 mb-4">
-                        <span className="inline-flex items-center gap-1.5">
-                          <Icon name="map-pin" className="w-3.5 h-3.5 text-ink/40 shrink-0" />
-                          <span>Mirpur 10</span>
-                        </span>
-                        <span className="text-ink/25">·</span>
-                        <span className="inline-flex items-center gap-1.5">
-                          <Icon name="clock" className="w-3.5 h-3.5 text-ink/40 shrink-0" />
-                          <span>Today, 5:30 PM</span>
-                        </span>
-                      </div>
-
-                      <div className="flex items-baseline pt-3 border-t border-linec">
-                        <span className="text-[22px] font-bold text-terra">৳250</span>
-                      </div>
-                    </div>
-
-                    {/* ---- STATE 2: Someone on the way ---- */}
-                    <div className="hero-state hero-state-2">
-                      <div className="py-6 text-center">
-                        <div className="w-12 h-12 mx-auto rounded-full bg-gradient-to-br from-amber-50 to-orange-50 flex items-center justify-center mb-4">
-                          <Icon name="user" className="text-terra" />
-                        </div>
-                        <p className="text-[16px] font-bold text-ink leading-relaxed">
-                          Someone nearby
-                          <br />
-                          is on the way.
-                        </p>
-                      </div>
-                    </div>
-
-                    {/* ---- STATE 3: Task completed ---- */}
-                    <div className="hero-state hero-state-3">
-                      <div className="py-6 text-center">
-                        {/* Rung lighting up */}
-                        <div className="w-16 h-16 mx-auto rounded-2xl bg-gradient-to-br from-amber-50 to-orange-50 flex items-center justify-center mb-4 relative">
-                          <svg width="28" height="28" viewBox="0 0 32 32" fill="none" className="hero-rung">
-                            <line x1="10" y1="4" x2="10" y2="28" stroke="#CC6B4A" strokeWidth="2" strokeLinecap="round" strokeOpacity="0.5" />
-                            <line x1="22" y1="4" x2="22" y2="28" stroke="#CC6B4A" strokeWidth="2" strokeLinecap="round" strokeOpacity="0.5" />
-                            <line x1="10" y1="8" x2="22" y2="8" stroke="#CC6B4A" strokeWidth="2.5" strokeLinecap="round" className="hero-rung-line" />
-                            <line x1="10" y1="14" x2="22" y2="14" stroke="#CC6B4A" strokeWidth="2.5" strokeLinecap="round" className="hero-rung-line" />
-                            <line x1="10" y1="20" x2="22" y2="20" stroke="#CC6B4A" strokeWidth="2.5" strokeLinecap="round" className="hero-rung-line" />
-                          </svg>
-                        </div>
-                        <p className="text-[15px] font-bold text-ink mb-2">
-                          Task completed
-                        </p>
-                        <span className="inline-flex items-center gap-1.5 bg-green-50 text-green-700 text-[12px] font-bold px-3 py-1.5 rounded-full hero-rung-badge">
-                          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round">
-                            <polyline points="20 6 9 17 4 12" />
-                          </svg>
-                          +1 rung
-                        </span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+              <div className="w-full max-w-[460px]">
+                <img
+                  src="/ladder.png"
+                  alt="Two people exchanging a package with a ladder between them — Bangladeshi rickshaw-art style"
+                  className="w-full h-auto select-none"
+                  draggable={false}
+                />
               </div>
             </div>
           </div>
@@ -470,74 +387,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
-      {/* ===================== HERO CARD ANIMATION CSS ===================== */}
-      <style>{`
-        /* The hero card cycles through 3 states, once, over ~5s */
-        .hero-card {
-          min-height: 260px;
-        }
-
-        .hero-state {
-          position: absolute;
-          inset: 0;
-          padding: 24px;
-          opacity: 0;
-          pointer-events: none;
-          transition: opacity 0.6s ease-out;
-        }
-        .hero-state-1 { position: relative; padding: 0; animation: heroState1 5s ease-out forwards; }
-        .hero-state-2 { animation: heroState2 5s ease-out forwards; }
-        .hero-state-3 { animation: heroState3 5s ease-out forwards; }
-
-        @keyframes heroState1 {
-          0%   { opacity: 1; }
-          35%  { opacity: 1; }
-          45%  { opacity: 0; }
-          100% { opacity: 0; }
-        }
-        @keyframes heroState2 {
-          0%   { opacity: 0; }
-          40%  { opacity: 0; }
-          50%  { opacity: 1; }
-          65%  { opacity: 1; }
-          75%  { opacity: 0; }
-          100% { opacity: 0; }
-        }
-        @keyframes heroState3 {
-          0%   { opacity: 0; }
-          70%  { opacity: 0; }
-          80%  { opacity: 1; }
-          100% { opacity: 1; }
-        }
-
-        /* Rung animation on state 3 */
-        .hero-rung-line {
-          opacity: 0;
-          animation: heroRungLight 0.5s ease-out forwards;
-        }
-        .hero-rung-line:nth-of-type(3) { animation-delay: 4.1s; }
-        .hero-rung-line:nth-of-type(4) { animation-delay: 4.4s; }
-        .hero-rung-line:nth-of-type(5) { animation-delay: 4.7s; }
-
-        @keyframes heroRungLight {
-          to { opacity: 1; }
-        }
-
-        .hero-rung-badge {
-          opacity: 0;
-          animation: heroBadge 0.5s ease-out 4.6s forwards;
-        }
-        @keyframes heroBadge {
-          to { opacity: 1; }
-        }
-
-        /* Reduced motion: show state 1 permanently */
-        @media (prefers-reduced-motion: reduce) {
-          .hero-state-1 { animation: none; opacity: 1; }
-          .hero-state-2, .hero-state-3 { display: none; }
-        }
-      `}</style>
     </>
   )
 }
