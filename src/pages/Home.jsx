@@ -23,14 +23,14 @@ const TaskCard = ({ icon, title, category, price, location, time, applicants }) 
     </div>
 
     <div className="flex items-center gap-2.5 text-[12.5px] text-ink/55 mb-4">
-      <span className="inline-flex items-center gap-1">
-        <Icon name="map-pin" className="w-3.5 h-3.5 text-ink/40" />
-        {location}
+      <span className="inline-flex items-center gap-1.5">
+        <Icon name="map-pin" className="w-3.5 h-3.5 text-ink/40 shrink-0" />
+        <span>{location}</span>
       </span>
       <span className="text-ink/25">·</span>
-      <span className="inline-flex items-center gap-1">
-        <Icon name="clock" className="w-3.5 h-3.5 text-ink/40" />
-        {time}
+      <span className="inline-flex items-center gap-1.5">
+        <Icon name="clock" className="w-3.5 h-3.5 text-ink/40 shrink-0" />
+        <span>{time}</span>
       </span>
     </div>
 
@@ -55,47 +55,60 @@ export default function Home() {
         <div className="absolute top-0 -right-40 w-[600px] h-[600px] rounded-full bg-brand/10 blur-3xl -z-10" />
         <div className="absolute bottom-0 -left-40 w-[500px] h-[500px] rounded-full bg-terra/8 blur-3xl -z-10" />
 
-        <div className="container-page pt-12 pb-16 md:pt-24 md:pb-28">
+        <div className="container-page pt-10 pb-16 md:pt-16 md:pb-28">
           <div className="grid md:grid-cols-2 gap-12 md:gap-16 items-center">
 
-            {/* LEFT: Copy */}
-            <div>
-              <div className="inline-flex items-center gap-2 rounded-full border border-linec bg-white/80 backdrop-blur-sm px-3.5 py-1.5 text-[12.5px] font-semibold text-ink/70 mb-7">
+            {/* ============= LEFT: Copy ============= */}
+            <div className="text-center md:text-left">
+              <div className="inline-flex items-center gap-2 rounded-full border border-linec bg-white/80 backdrop-blur-sm px-3.5 py-1.5 text-[12.5px] font-semibold text-ink/70 mb-6 md:mb-7">
                 🇧🇩 <span>Made in Bangladesh</span>
               </div>
 
-              <h1 className="text-[42px] md:text-[60px] leading-[1.04] font-extrabold tracking-tight text-ink mb-6">
-                Every task
+              <h1 className="text-[44px] md:text-[60px] leading-[1.04] font-extrabold tracking-tight text-ink mb-5 md:mb-6">
+                Someone needs help.
                 <br />
-                tells a{' '}
+                Someone needs a{' '}
                 <span className="bg-gradient-to-br from-brand to-terra bg-clip-text text-transparent">
-                  story.
+                  chance.
                 </span>
               </h1>
 
-              <p className="text-[16.5px] md:text-[18.5px] leading-relaxed text-ink/70 mb-8 max-w-lg">
-                Today, someone needs a hospital serial held. Tomorrow, someone needs medicine picked up. Ladder is where those small tasks find nearby hands — and where every completed task becomes a rung someone can climb.
+              <p className="text-[16px] md:text-[18px] leading-relaxed text-ink/70 mb-7 md:mb-8 max-w-lg mx-auto md:mx-0">
+                Post a small task and get help from trusted people nearby. Or use your free time to earn, close to home.
               </p>
 
-              <div className="flex flex-wrap items-center gap-3 mb-6">
+              {/* CTAs — mobile: 1 button + text link, desktop: 2 buttons */}
+              <div className="flex flex-col md:flex-row md:items-center gap-4 md:gap-3 mb-6">
                 <a
                   href={APP_URL}
-                  className="inline-flex items-center gap-2 rounded-xl bg-brand text-white px-6 py-3.5 font-semibold text-[15px] shadow-lg shadow-brand/25 hover:bg-amber-500 transition active:scale-[0.98]"
+                  className="inline-flex items-center justify-center gap-2 rounded-xl bg-brand text-white px-7 py-4 md:py-3.5 font-semibold text-[15.5px] md:text-[15px] shadow-lg shadow-brand/25 hover:bg-amber-500 transition active:scale-[0.98] w-full md:w-auto"
                 >
                   Open Ladder
                   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round">
                     <path d="M5 12h14M13 5l7 7-7 7" />
                   </svg>
                 </a>
+
                 <Link
                   to="/how-it-works"
-                  className="inline-flex items-center gap-2 rounded-xl bg-white text-ink border border-linec px-6 py-3.5 font-semibold text-[15px] hover:border-terra transition active:scale-[0.98]"
+                  className="hidden md:inline-flex items-center gap-2 rounded-xl bg-white text-ink border border-linec px-6 py-3.5 font-semibold text-[15px] hover:border-terra transition active:scale-[0.98]"
                 >
                   How it works
                 </Link>
+
+                <Link
+                  to="/how-it-works"
+                  className="md:hidden inline-flex items-center justify-center gap-1.5 text-[14.5px] font-semibold text-terra hover:text-amber-600 transition"
+                >
+                  See how it works
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round">
+                    <path d="M5 12h14M13 5l7 7-7 7" />
+                  </svg>
+                </Link>
               </div>
 
-              <div className="flex flex-wrap items-center gap-x-5 gap-y-2 text-[13px] text-ink/55">
+              {/* Trust line */}
+              <div className="flex flex-wrap items-center justify-center md:justify-start gap-x-5 gap-y-2 text-[13px] text-ink/55">
                 <span className="inline-flex items-center gap-1.5">
                   <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#16a34a" strokeWidth="3" strokeLinecap="round">
                     <polyline points="20 6 9 17 4 12" />
@@ -106,47 +119,100 @@ export default function Home() {
                   <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#16a34a" strokeWidth="3" strokeLinecap="round">
                     <polyline points="20 6 9 17 4 12" />
                   </svg>
-                  Available in Dhaka
+                  Starting in Mirpur, Dhaka
                 </span>
               </div>
             </div>
 
-            {/* RIGHT: Task cards */}
-            <div className="relative">
-              <div className="relative z-10">
-                <TaskCard
-                  icon="ticket"
-                  category="Queue & Serial"
-                  title="Hold my serial at Popular Diagnostic"
-                  price="250"
-                  location="Mirpur 10"
-                  time="Today · 5:30 PM"
-                  applicants={3}
-                />
-              </div>
+            {/* ============= RIGHT: Single animated example card ============= */}
+            <div className="relative flex justify-center md:justify-end">
+              <div className="w-full max-w-[380px]">
+                {/* Small "Example" label */}
+                <div className="mb-3 inline-flex items-center gap-2 text-[10.5px] font-bold uppercase tracking-[0.18em] text-terra/60">
+                  <span className="w-6 h-px bg-terra/30" />
+                  Example
+                </div>
 
-              <div className="relative z-0 -mt-4 ml-12 md:ml-20 scale-95 opacity-80">
-                <TaskCard
-                  icon="pill"
-                  category="Errands"
-                  title="Pick up medicine from Lazz Pharma"
-                  price="120"
-                  location="Dhanmondi"
-                  time="Tomorrow · 10:00 AM"
-                  applicants={1}
-                />
-              </div>
+                {/* Animated card container */}
+                <div className="relative rounded-2xl border border-linec bg-white overflow-hidden shadow-lg shadow-black/5 hero-card">
+                  {/* Ambient top gradient line */}
+                  <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-brand to-terra" />
 
-              <div className="relative z-0 -mt-4 ml-24 md:ml-40 scale-90 opacity-60">
-                <TaskCard
-                  icon="book"
-                  category="Tutoring"
-                  title="Math tutoring for Class 9"
-                  price="600"
-                  location="Online"
-                  time="Sunday · 6:00 PM"
-                  applicants={5}
-                />
+                  <div className="p-6">
+                    {/* ---- STATE 1: Help needed ---- */}
+                    <div className="hero-state hero-state-1">
+                      <div className="flex items-start justify-between mb-3">
+                        <span className="inline-flex items-center gap-1.5 bg-amber-50 text-amber-700 text-[10.5px] font-bold px-2.5 py-1 rounded-full uppercase tracking-wider">
+                          Queue & Serial
+                        </span>
+                      </div>
+
+                      <div className="flex items-start gap-3 mb-4">
+                        <div className="w-11 h-11 rounded-xl bg-gradient-to-br from-amber-50 to-orange-50 flex items-center justify-center shrink-0">
+                          <Icon name="ticket" className="text-terra" />
+                        </div>
+                        <h3 className="text-[16px] font-bold text-ink leading-snug pt-1.5">
+                          Hold my serial at the hospital
+                        </h3>
+                      </div>
+
+                      <div className="flex items-center gap-2.5 text-[12.5px] text-ink/55 mb-4">
+                        <span className="inline-flex items-center gap-1.5">
+                          <Icon name="map-pin" className="w-3.5 h-3.5 text-ink/40 shrink-0" />
+                          <span>Mirpur 10</span>
+                        </span>
+                        <span className="text-ink/25">·</span>
+                        <span className="inline-flex items-center gap-1.5">
+                          <Icon name="clock" className="w-3.5 h-3.5 text-ink/40 shrink-0" />
+                          <span>Today, 5:30 PM</span>
+                        </span>
+                      </div>
+
+                      <div className="flex items-baseline pt-3 border-t border-linec">
+                        <span className="text-[22px] font-bold text-terra">৳250</span>
+                      </div>
+                    </div>
+
+                    {/* ---- STATE 2: Someone on the way ---- */}
+                    <div className="hero-state hero-state-2">
+                      <div className="py-6 text-center">
+                        <div className="w-12 h-12 mx-auto rounded-full bg-gradient-to-br from-amber-50 to-orange-50 flex items-center justify-center mb-4">
+                          <Icon name="user" className="text-terra" />
+                        </div>
+                        <p className="text-[16px] font-bold text-ink leading-relaxed">
+                          Someone nearby
+                          <br />
+                          is on the way.
+                        </p>
+                      </div>
+                    </div>
+
+                    {/* ---- STATE 3: Task completed ---- */}
+                    <div className="hero-state hero-state-3">
+                      <div className="py-6 text-center">
+                        {/* Rung lighting up */}
+                        <div className="w-16 h-16 mx-auto rounded-2xl bg-gradient-to-br from-amber-50 to-orange-50 flex items-center justify-center mb-4 relative">
+                          <svg width="28" height="28" viewBox="0 0 32 32" fill="none" className="hero-rung">
+                            <line x1="10" y1="4" x2="10" y2="28" stroke="#CC6B4A" strokeWidth="2" strokeLinecap="round" strokeOpacity="0.5" />
+                            <line x1="22" y1="4" x2="22" y2="28" stroke="#CC6B4A" strokeWidth="2" strokeLinecap="round" strokeOpacity="0.5" />
+                            <line x1="10" y1="8" x2="22" y2="8" stroke="#CC6B4A" strokeWidth="2.5" strokeLinecap="round" className="hero-rung-line" />
+                            <line x1="10" y1="14" x2="22" y2="14" stroke="#CC6B4A" strokeWidth="2.5" strokeLinecap="round" className="hero-rung-line" />
+                            <line x1="10" y1="20" x2="22" y2="20" stroke="#CC6B4A" strokeWidth="2.5" strokeLinecap="round" className="hero-rung-line" />
+                          </svg>
+                        </div>
+                        <p className="text-[15px] font-bold text-ink mb-2">
+                          Task completed
+                        </p>
+                        <span className="inline-flex items-center gap-1.5 bg-green-50 text-green-700 text-[12px] font-bold px-3 py-1.5 rounded-full hero-rung-badge">
+                          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round">
+                            <polyline points="20 6 9 17 4 12" />
+                          </svg>
+                          +1 rung
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -210,42 +276,10 @@ export default function Home() {
         </div>
 
         <div className="grid md:grid-cols-2 gap-5">
-          <TaskCard
-            icon="ticket"
-            category="Queue & Serial"
-            title="Hold my serial at Popular Diagnostic"
-            price="250"
-            location="Mirpur 10"
-            time="Today · 5:30 PM"
-            applicants={3}
-          />
-          <TaskCard
-            icon="pill"
-            category="Errands"
-            title="Pick up medicine from Lazz Pharma"
-            price="120"
-            location="Dhanmondi"
-            time="Tomorrow · 10:00 AM"
-            applicants={1}
-          />
-          <TaskCard
-            icon="book"
-            category="Tutoring"
-            title="Math tutoring for Class 9"
-            price="600"
-            location="Online"
-            time="Sunday · 6:00 PM"
-            applicants={5}
-          />
-          <TaskCard
-            icon="package"
-            category="Carrying"
-            title="Carry boxes to a new apartment"
-            price="450"
-            location="Mohammadpur"
-            time="Saturday · 9:00 AM"
-            applicants={2}
-          />
+          <TaskCard icon="ticket" category="Queue & Serial" title="Hold my serial at Popular Diagnostic" price="250" location="Mirpur 10" time="Today · 5:30 PM" applicants={3} />
+          <TaskCard icon="pill" category="Errands" title="Pick up medicine from Lazz Pharma" price="120" location="Dhanmondi" time="Tomorrow · 10:00 AM" applicants={1} />
+          <TaskCard icon="book" category="Tutoring" title="Math tutoring for Class 9" price="600" location="Online" time="Sunday · 6:00 PM" applicants={5} />
+          <TaskCard icon="package" category="Carrying" title="Carry boxes to a new apartment" price="450" location="Mohammadpur" time="Saturday · 9:00 AM" applicants={2} />
         </div>
       </section>
 
@@ -261,11 +295,7 @@ export default function Home() {
                 <div className="rotate-[-2deg] transition-transform duration-500 hover:rotate-0">
                   <div className="rounded-[32px] overflow-hidden border-[10px] border-white shadow-[0_25px_60px_-15px_rgba(0,0,0,0.25)]">
                     <div className="aspect-[4/5]">
-                      <img
-                        src="/sabrina.jpg"
-                        alt="Sabrina A. — Hirer on Ladder"
-                        className="w-full h-full object-cover"
-                      />
+                      <img src="/sabrina.jpg" alt="Sabrina A. — Hirer on Ladder" className="w-full h-full object-cover" />
                     </div>
                   </div>
                 </div>
@@ -278,12 +308,8 @@ export default function Home() {
                       </svg>
                     </div>
                     <div>
-                      <div className="text-[10.5px] font-bold text-ink uppercase tracking-wide">
-                        Verified
-                      </div>
-                      <div className="text-[9px] text-ink/50">
-                        Hirer · Dhaka
-                      </div>
+                      <div className="text-[10.5px] font-bold text-ink uppercase tracking-wide">Verified</div>
+                      <div className="text-[9px] text-ink/50">Hirer · Dhaka</div>
                     </div>
                   </div>
                 </div>
@@ -296,9 +322,7 @@ export default function Home() {
               </div>
 
               <blockquote className="mb-8">
-                <div className="text-[52px] md:text-[64px] leading-[0.9] font-serif text-terra/30 mb-2">
-                  "
-                </div>
+                <div className="text-[52px] md:text-[64px] leading-[0.9] font-serif text-terra/30 mb-2">"</div>
                 <p className="text-[28px] md:text-[36px] leading-[1.25] font-bold text-ink tracking-tight">
                   I couldn't hold the serial myself — and Ladder found someone who could.
                 </p>
@@ -323,9 +347,7 @@ export default function Home() {
 
               <div className="rounded-2xl border border-linec bg-cream p-5 max-w-md">
                 <div className="flex items-center gap-2.5 mb-3 pb-3 border-b border-linec">
-                  <div className="w-9 h-9 rounded-full bg-gradient-to-br from-brand to-terra flex items-center justify-center text-white font-bold text-[12px]">
-                    R
-                  </div>
+                  <div className="w-9 h-9 rounded-full bg-gradient-to-br from-brand to-terra flex items-center justify-center text-white font-bold text-[12px]">R</div>
                   <div>
                     <div className="text-[13px] font-bold text-ink">Rafi Hossain</div>
                     <div className="text-[11px] text-ink/50">★ 4.9 · Worker</div>
@@ -340,9 +362,7 @@ export default function Home() {
                   </div>
                 </div>
                 <div className="mt-3 pt-3 border-t border-linec flex items-center justify-between">
-                  <span className="text-[10.5px] text-ink/40 font-semibold uppercase tracking-wider">
-                    Task completed
-                  </span>
+                  <span className="text-[10.5px] text-ink/40 font-semibold uppercase tracking-wider">Task completed</span>
                   <span className="inline-flex items-center gap-1 bg-green-50 text-green-700 text-[10.5px] font-bold px-2.5 py-1 rounded-full">
                     <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round">
                       <polyline points="20 6 9 17 4 12" />
@@ -450,6 +470,74 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* ===================== HERO CARD ANIMATION CSS ===================== */}
+      <style>{`
+        /* The hero card cycles through 3 states, once, over ~5s */
+        .hero-card {
+          min-height: 260px;
+        }
+
+        .hero-state {
+          position: absolute;
+          inset: 0;
+          padding: 24px;
+          opacity: 0;
+          pointer-events: none;
+          transition: opacity 0.6s ease-out;
+        }
+        .hero-state-1 { position: relative; padding: 0; animation: heroState1 5s ease-out forwards; }
+        .hero-state-2 { animation: heroState2 5s ease-out forwards; }
+        .hero-state-3 { animation: heroState3 5s ease-out forwards; }
+
+        @keyframes heroState1 {
+          0%   { opacity: 1; }
+          35%  { opacity: 1; }
+          45%  { opacity: 0; }
+          100% { opacity: 0; }
+        }
+        @keyframes heroState2 {
+          0%   { opacity: 0; }
+          40%  { opacity: 0; }
+          50%  { opacity: 1; }
+          65%  { opacity: 1; }
+          75%  { opacity: 0; }
+          100% { opacity: 0; }
+        }
+        @keyframes heroState3 {
+          0%   { opacity: 0; }
+          70%  { opacity: 0; }
+          80%  { opacity: 1; }
+          100% { opacity: 1; }
+        }
+
+        /* Rung animation on state 3 */
+        .hero-rung-line {
+          opacity: 0;
+          animation: heroRungLight 0.5s ease-out forwards;
+        }
+        .hero-rung-line:nth-of-type(3) { animation-delay: 4.1s; }
+        .hero-rung-line:nth-of-type(4) { animation-delay: 4.4s; }
+        .hero-rung-line:nth-of-type(5) { animation-delay: 4.7s; }
+
+        @keyframes heroRungLight {
+          to { opacity: 1; }
+        }
+
+        .hero-rung-badge {
+          opacity: 0;
+          animation: heroBadge 0.5s ease-out 4.6s forwards;
+        }
+        @keyframes heroBadge {
+          to { opacity: 1; }
+        }
+
+        /* Reduced motion: show state 1 permanently */
+        @media (prefers-reduced-motion: reduce) {
+          .hero-state-1 { animation: none; opacity: 1; }
+          .hero-state-2, .hero-state-3 { display: none; }
+        }
+      `}</style>
     </>
   )
 }
